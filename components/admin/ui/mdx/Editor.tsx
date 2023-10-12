@@ -64,4 +64,6 @@ const MDXEditorAdmin = ({ name, label, control, error }: MDXEditorAdminProps) =>
     )
 }
 
+MDXEditorAdmin.displayName = 'MDXEditorAdmin'
+
 export default MDXEditorAdmin

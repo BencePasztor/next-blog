@@ -32,7 +32,7 @@ const LatestArticles = () => {
         if (inView && hasNextPage && !isFetching) {
             fetchNextPage()
         }
-    }, [inView, isFetching, hasNextPage])
+    }, [inView, isFetching, hasNextPage, fetchNextPage])
 
     // Article data array merged from pages
     let articlesData: ArticleExtended[] = []
