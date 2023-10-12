@@ -16,7 +16,7 @@ export default function About() {
           <h2>The application</h2>
           <p>This practice project is a simple, minimalistic blog application that has an admin panel for managing the articles and the users</p>
           <p>The admin panel can be reached at <Link href="/admin">/admin</Link></p>
-          <p>The test user and password are: <b>"test@test.hu"</b>  and <b>"testpassword"</b></p>
+          <p>The test user and password are: <b>test@test.hu</b>  and <b>testpassword</b></p>
         </section>
 
         <section>

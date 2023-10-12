@@ -31,6 +31,8 @@ const ForwardedRefMDXEditor = forwardRef<MDXEditorMethods, MDXEditorProps>((prop
     <DynamicMDXEditor {...props} editorRef={ref} />
 ))
 
+ForwardedRefMDXEditor.displayName = 'ForwardedRefMDXEditor'
+
 const MDXEditorAdmin = ({ name, label, control, error }: MDXEditorAdminProps) => {
 
     const inputClasses = twMerge(
