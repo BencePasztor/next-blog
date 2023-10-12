@@ -3,7 +3,8 @@
 import { useForm, SubmitHandler } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { UserChangePasswordBody, userChangePasswordSchema } from "@/utils/schemas/users"
-import { changeUserPassword, UserChangePasswordError } from "@/utils/fetch/users"
+import { changeUserPassword } from "@/utils/fetch/users"
+import { FetchError } from "@/utils/fetch/fetchTypes"
 import { useMutation } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import { AxiosError } from "axios"
@@ -31,7 +32,7 @@ const ChangePasswordForm = () => {
         onSuccess: () => {
             router.replace('/admin/users')
         },
-        onError: (error: AxiosError<UserChangePasswordError>) => {
+        onError: (error: AxiosError<FetchError<UserChangePasswordBody>>) => {
             // Field Error
             if (error.response?.data?.issues) {
                 const issues = error.response?.data?.issues
