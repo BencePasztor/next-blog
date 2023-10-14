@@ -5,8 +5,9 @@ export const articleBodySchema = z.object({
     image: z.custom<FileList | File>()
         .nullable()
         .transform((value) => {
-            // If it' falsy or an instance of File, return the value
-            if (!value || value instanceof File) {
+            // If it' falsy or an instance of Blob / File, return the value
+            // Note: File class is undefined in node at version 18
+            if (!value || value instanceof Blob || value instanceof File) {
                 return value
             }
 
