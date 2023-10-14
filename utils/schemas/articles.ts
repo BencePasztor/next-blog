@@ -40,10 +40,4 @@ export const articleBodySchema = z.object({
     slug: z.string().trim().min(1, "Slug must not be empty").regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Invalid slug").max(191)
 })
 
-export const articleBodySchemaWithId = articleBodySchema.extend({
-    id: z.number()
-})
-
 export type ArticleBody = z.infer<typeof articleBodySchema>
-
-export type ArticleBodyWithId = z.infer<typeof articleBodySchemaWithId>
