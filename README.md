@@ -1,11 +1,11 @@
 # Next Blog
 
 ## About
-This practice project is a simple, minimalistic blog application that has an admin panel for managing the articles and the users.
+This practice project is a simple, minimalistic blog application, that has an admin panel for managing the articles and the users.
 
 The admin panel can be reached at **/admin**. The test user is "test@test.hu" and the password is "testpassword". There are some preuploaded articles and the data for the test user in the seed.sql and some preuploaded images in the /images folder
 
-To try the application navigate to the directory of the project and run:
+To try the application, navigate to the directory of the project and run:
 
     docker-compose up --build
     
@@ -33,4 +33,5 @@ To try the application navigate to the directory of the project and run:
  - React Hook Form
  - Next Auth
  - React Query / React Table
+
 ...and some other libraries
