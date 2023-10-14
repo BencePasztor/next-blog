@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+     - MYSQL_ROOT_PASSWORD=secret
+     - MYSQL_USER=test
+     - MYSQL_PASSWORD=test
+     - MYSQL_DATABASE=next-blog
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./seed.sql:/docker-entrypoint-initdb.d/seed.sql
+    networks:
+     - local
+
+  nextjs:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+     - ./images:/app/public/images
+    networks:
+     - local
+
+volumes:
+  mysql-data:
+
+networks:
+  local:
