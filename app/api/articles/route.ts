@@ -36,7 +36,7 @@ export const POST = protectedRoute(async (request: NextRequest) => {
         //For the image file
         const formData = await request.formData()
 
-        // For Zod
+        // For Zod Validation
         const formObject = Object.fromEntries(formData)
 
         // Extend the article schema with slug validation
@@ -68,7 +68,6 @@ export const POST = protectedRoute(async (request: NextRequest) => {
             const uploadResult = await saveArticleImage(image, article.id)
             if (uploadResult.success && uploadResult.filePath) {
                 const imagePath = uploadResult.filePath
-                // Update Article (I want to save the image to "images/articles/[id]/" for later modifications) 
                 await db.article.update({
                     where: { id: article.id }, data: {
                         image: imagePath

@@ -51,7 +51,7 @@ const ArticlesForm = ({ mode = "create", initialData }: ArticleFormProps) => {
 
     // Mutation
     const { mutate, isLoading } = useMutation({
-        mutationFn,
+        mutationFn, //depend on the mode prop ("create" | "update")
         onSuccess: () => {
             router.replace('/admin/articles')
         },

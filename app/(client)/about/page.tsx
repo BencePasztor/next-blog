@@ -8,17 +8,15 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <Container className="bg-white shadow" as="section">
+    <Container className="bg-white shadow">
       <div className="prose">
         <h1>About</h1>
-
         <section>
           <h2>The application</h2>
           <p>This practice project is a simple, minimalistic blog application that has an admin panel for managing the articles and the users</p>
           <p>The admin panel can be reached at <Link href="/admin">/admin</Link></p>
           <p>The test user and password are: <b>test@test.hu</b>  and <b>testpassword</b></p>
         </section>
-
         <section>
           <h2>Features</h2>
           <ul>
@@ -29,7 +27,6 @@ export default function About() {
             <li>Markdown based article content</li>
           </ul>
         </section>
-
         <section>
           <h2>Tools used</h2>
           <ul>
@@ -43,7 +40,6 @@ export default function About() {
           </ul>
           <p>... and some other libraries</p>
         </section>
-
       </div>
     </Container>
   )

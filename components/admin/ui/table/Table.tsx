@@ -85,7 +85,7 @@ const Table = <T extends PaginatedResponse, D>({ itemsPerPage, columns, queryKey
 
     return (
         <>
-            <div className="relative">
+            <div>
                 <table className={twMerge("table-auto w-full border-collapse text-left text-sm", clsx({ "animate-pulse": isFetching }))}>
                     <thead>
                         {table.getHeaderGroups().map(headerGroup => (

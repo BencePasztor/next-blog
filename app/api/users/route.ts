@@ -75,7 +75,7 @@ export const POST = protectedRoute(async (request: NextRequest) => {
         const hashedPassword = await hashPassword(randomPassword)
 
         // Save User
-        const user = await db.user.create({
+        await db.user.create({
             data: {
                 ...parseResult.data,
                 password: hashedPassword

@@ -24,7 +24,7 @@ export const PATCH = protectedRoute(async (request: NextRequest, { params }: { p
         }
 
         // Save User
-        const user = await db.user.update({
+        await db.user.update({
             where: {
                 id: userId
             },

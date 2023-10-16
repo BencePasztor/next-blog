@@ -10,13 +10,11 @@ export default function ClientLayout({
 
   return (
     <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
-      <header className="mb-4">
+      <header>
         <Navbar />
       </header>
-      <main className="bg-slate-100">
-        <div className="container p-4 mx-auto">
-          {children}
-        </div>
+      <main className="bg-slate-100 py-4">
+        {children}
       </main>
       <Footer />
     </div>

@@ -32,6 +32,7 @@ export const authOptions: AuthOptions = {
     session: { strategy: "jwt" },
     callbacks: {
         async jwt({ token, user }) {
+            // Set the userId and the firstLogin in the token
             if (user) {
                 token.userId = user.id
                 token.firstLogin = user.firstLogin
@@ -39,6 +40,7 @@ export const authOptions: AuthOptions = {
             return token
         },
         async session({ session, token }) {
+            // Take the userId and the firstLogin from the token we set in the jwt and store them in the session
             if (session.user && typeof token.userId === "number" && typeof token.firstLogin === "boolean") {
                 session.user.id = token.userId
                 session.user.firstLogin = token.firstLogin

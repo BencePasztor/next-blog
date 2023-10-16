@@ -3,10 +3,10 @@
 import AdminProviders from "./AdminProviders"
 import AdminLayoutInner from "./AdminLayoutInner"
 
-// The AdminLayoutInner and AdminLayout separation is needed to make the layout.tsx a server component
-// while keeping these components server components
+// The AdminLayout and AdminLayoutWrapper separation is needed to make the layout.tsx a server component
+// while keeping these components client components
 
-export default function AdminLayout({
+export default function AdminLayoutWrapper({
     children,
 }: {
     children: React.ReactNode

@@ -1,21 +1,20 @@
-import AdminLayout from "@/components/admin/layout/AdminLayout"
+import AdminLayoutWrapper from "@/components/admin/layout/AdminLayoutWrapper"
 import { redirectToPasswordChangeOnFirstLogin } from "@/utils/authUtils"
 
-export default async function Layout({
+export default async function AdminLayout({
     children,
 }: {
     children: React.ReactNode
 }) {
 
-    // Guess what this does!
     await redirectToPasswordChangeOnFirstLogin()
 
     return (
         <>
             <div id="modal-portal"></div>
-            <AdminLayout>
+            <AdminLayoutWrapper>
                 {children}
-            </AdminLayout>
+            </AdminLayoutWrapper>
         </>
     )
 }

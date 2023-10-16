@@ -44,19 +44,3 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ message: "Internal Server Error" }, { status: 500 })
     }
 }
-
-// export async function POST(request: NextRequest, { params }: { params: { id: number } }) {
-//     const articleId = params.id
-
-//     try {
-//         const article = await db.article.findUniqueOrThrow({
-//             where: {
-//                 id: articleId
-//             }
-//         })
-
-//         return NextResponse.json({ ...article }, { status: 201 })
-//     } catch (error) {
-//         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 })
-//     }
-// }
